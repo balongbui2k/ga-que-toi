@@ -1,4 +1,4 @@
-// import Content from "../components/content";
+import Content from "../components/content";
 import { useState } from "react";
 import Header from "../components/header";
 import SideBar from "../components/side-bar";
@@ -12,9 +12,9 @@ const Home = () => {
     <div>
       <Header onButtonClick={handleViewSidebar} />
       <SideBar isOpen={sidebarOpen} />
-      {/* <main>
+      <main className="mobile:mt-6">
         <Content />
-      </main> */}
+      </main>
     </div>
   );
 };
