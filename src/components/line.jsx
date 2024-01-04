@@ -5,5 +5,10 @@ export const VerticalLine = () => {
 };
 
 export const HorizontalLine = () => {
-  return <div className="w-[360px] h-[3px] bg-main-orange"></div>;
+  return (
+    <div
+      className="w-[360px] h-[3px] bg-main-orange mx-auto
+                mobile:w-[300px]"
+    ></div>
+  );
 };

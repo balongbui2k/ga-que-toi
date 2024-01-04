@@ -1,4 +1,5 @@
 import icon from "../assets/images/main-logo.png";
+import englandIcon from "../assets/images/england-icon.png";
 import { IconCart, IconMarker, IconMenu } from "../components/icons";
 import { VerticalLine } from "../components/line";
 
@@ -20,7 +21,12 @@ const Header = ({ onButtonClick }) => {
       </div>
 
       <div className="flex border-2 rounded-lg border-solid border-main-orange my-[52px] justify-between items-center container mx-auto mobile:hidden">
-        <img src={icon} width={140} height={40} className="py-4 ml-20" />
+        <img
+          src={icon}
+          width={140}
+          height={40}
+          className="py-4 ml-20 cursor-pointer  "
+        />
         <div className="flex items-center container mx-auto justify-end px-6">
           <p className="cursor-pointer hover:text-main-orange">Home</p>
           <VerticalLine />
@@ -33,10 +39,26 @@ const Header = ({ onButtonClick }) => {
         </div>
       </div>
 
-      <div className="flex border-2 rounded-lg border-solid border-main-orange  justify-between items-center container mx-auto ">
-        <img src={icon} width={140} height={40} className="py-4 ml-4" />
-        <div className="mr-4 hover:opacity-80 hover:scale-105 duration-200 rounded-full cursor-pointer">
-          <IconMenu onClick={onButtonClick} />
+      <div className="flex border-2 rounded-lg border-solid border-main-orange justify-between items-center container mx-auto lg-desktop:hidden">
+        <img
+          src={icon}
+          width={140}
+          height={40}
+          className="py-4 ml-4 cursor-pointer"
+        />
+        <div className="flex items-center">
+          <div className="flex mr-5 items-center">
+            <img
+              src={englandIcon}
+              className="w-[20px] h-[20px] cursor-pointer hover:opacity-80"
+            />
+            <p className="pl-4 hover:text-main-orange cursor-pointer">
+              Sign in
+            </p>
+          </div>
+          <div className="mr-4 hover:opacity-80 hover:scale-105 duration-200 rounded-full cursor-pointer flex">
+            <IconMenu onClick={onButtonClick} />
+          </div>
         </div>
       </div>
     </header>
