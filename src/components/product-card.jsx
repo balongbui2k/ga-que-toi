@@ -1,11 +1,11 @@
-import { chickenProducts } from "../utils/food-data";
+import { IconMarker } from "./icons";
 
-const ProductCard = () => {
-  return chickenProducts.map((product) => {
+const ProductCards = ({ list }) => {
+  return list.map((product) => {
     return (
       <div
         key={product.id}
-        className="max-h-[420px] rounded-lg w-[290px] h-full aspect-[1/2] px-2 py-4 shadow-xl bg-white relative group m-4"
+        className="max-h-[420px] rounded-lg w-full max-w-[290px] h-full aspect-[1/2] px-2 py-4 shadow-xl bg-white relative m-4 cursor-pointer"
       >
         {product.status.onSale === "onSale" ? (
           <span className="px-3 py-1 bg-main-orange text-white rounded-sm text-[10px] font-bold text-center absolute left-4 top-4 z-10">
@@ -32,12 +32,15 @@ const ProductCard = () => {
             ${product.price}
           </p>
         </div>
-        <button className="bg-main-orange hover:bg-main-orange/80 py-2 px-4 rounded-xl text-white  transition-all duration-200 text-xs ml-6">
-          Add to Cart
-        </button>
+        <div className="flex justify-between items-center">
+          <button className="bg-main-orange hover:bg-main-orange/80 py-2 px-4 rounded-xl text-white  transition-all duration-200 text-xs ml-6">
+            Add to Cart
+          </button>
+          <IconMarker />
+        </div>
       </div>
     );
   });
 };
 
-export default ProductCard;
+export default ProductCards;
