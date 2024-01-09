@@ -12,7 +12,7 @@ const Home = () => {
     <div>
       <Header onButtonClick={handleViewSidebar} />
       <SideBar isOpen={sidebarOpen} />
-      <main className="mobile:mt-6">
+      <main className="sm:mt-6">
         <Content />
       </main>
     </div>
