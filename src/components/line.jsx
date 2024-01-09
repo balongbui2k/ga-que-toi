@@ -4,11 +4,6 @@ export const VerticalLine = () => {
   );
 };
 
-export const HorizontalLine = () => {
-  return (
-    <div
-      className="w-[250px] h-[3px] bg-main-orange mx-auto
-                "
-    ></div>
-  );
+export const HorizontalLine = ({ width }) => {
+  return <div className={`w-[${width}] h-[3px] bg-main-orange mx-auto`}></div>;
 };

@@ -10,10 +10,7 @@ import prod8 from "../assets/images/food-images/prod-2.png"
 export const chickenProducts = [
   {
     id: 1,
-    status: {
-      onSale: "onSale",
-      soldOut: "soldOut",
-    } ,
+    status:"onSale",
     image: prod1,
     starRate: 4.5,
     name: "Your Ultimate Spot for Fresh and Tasty Chicken Treats",
@@ -22,10 +19,7 @@ export const chickenProducts = [
   },
   {
     id: 2,
-        status: {
-      onSale: "onSale",
-      soldOut: "soldOut",
-    } ,
+    status:  "soldOut",
     image: prod2,
     starRate: 4.2,
     name: "Your Ultimate Spot for Fresh and Tasty Chicken Treats",
@@ -34,10 +28,7 @@ export const chickenProducts = [
   },
   {
     id: 3,
-        status: {
-      onSale: "onSale",
-      soldOut: "soldOut",
-    } ,
+    status:"soldOut",
     image: prod3,
     starRate: 4.5,
     name: "Your Ultimate Spot for Fresh and Tasty Chicken Treats",
@@ -46,7 +37,7 @@ export const chickenProducts = [
   },
   {
     id: 4,
-    status: "available" ,
+    status: "onSale" ,
     image: prod4,
     starRate: 4.5,
     name: "Your Ultimate Spot for Fresh and Tasty Chicken Treats",
@@ -55,10 +46,7 @@ export const chickenProducts = [
   },
   {
     id: 5,
-        status: {
-      onSale: "onSale",
-      soldOut: "soldOut",
-    } ,
+    status: "onSale",
     image:prod5,
     starRate: 4.2,
     name: "Your Ultimate Spot for Fresh and Tasty Chicken Treats",
@@ -67,10 +55,7 @@ export const chickenProducts = [
   },
   {
     id: 6,
-        status: {
-      onSale: "onSale",
-      soldOut: "soldOut",
-    } ,
+    soldOut: "soldOut",
     image: prod6,
     starRate: 4.5,
     name: "Your Ultimate Spot for Fresh and Tasty Chicken Treats",
@@ -79,7 +64,7 @@ export const chickenProducts = [
   },
   {
     id: 7,
-    status: "available" ,
+    status: "onSale" ,
     image: prod7,
     starRate: 4.5,
     name: "Your Ultimate Spot for Fresh and Tasty Chicken Treats",
@@ -88,10 +73,7 @@ export const chickenProducts = [
   },
   {
     id: 8,
-        status: {
-      onSale: "onSale",
-      soldOut: "soldOut",
-    } ,
+    status: "onSale",
     image: prod8,
     starRate: 4.2,
     name: "Your Ultimate Spot for Fresh and Tasty Chicken Treats",
@@ -100,17 +82,22 @@ export const chickenProducts = [
   },
   {
     id: 9,
-        status: {
-      onSale: "onSale",
-      soldOut: "soldOut",
-    } ,
+    status: "onSale",
     image: prod8,
     starRate: 4.2,
     name: "Your Ultimate Spot for Fresh and Tasty Chicken Treats",
     description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt",
     price: 12.99
   },
-
+  {
+    id: 10,
+    status:"soldOut",
+    image: prod8,
+    starRate: 4.2,
+    name: "Your Ultimate Spot for Fresh and Tasty Chicken Treats",
+    description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt",
+    price: 12.99
+  },
 
 ];
 

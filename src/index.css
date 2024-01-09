@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.quality-background{
+  background-image: url('./assets/images/chicken-bg.png');
+  object-fit: cover;
+  background-size:cover;
+filter: blur(0.8);
+}

@@ -7,10 +7,11 @@ import { HorizontalLine } from "./line";
 import ProductCards from "./product-card";
 import productBg from "../assets/images/bg-product.png";
 import { chickenProducts } from "../utils/food-data";
+import Sliders from "./sliders";
+import QualityCard from "./quality-card";
+import { qualityFood } from "../utils/quality-data";
 
 const Content = () => {
-  const slider = Array.from({ length: 1 }, (x, i) => i);
-
   return (
     <div>
       <div className="container mx-auto mt-12">
@@ -19,123 +20,69 @@ const Content = () => {
           className="w-full h-auto object-cover rounded-lg aspect-[3/1] brightness-[0.4]"
         />
 
-        <div className="flex justify-center ">
+        <div className="flex justify-center">
           <div
-            className="text-white  absolute top-[324px] leading-[48px] text-center
-                      mobile:top-5 mobile:absolute
-                      tablet:top-5 tablet:absolute
-                      surface:top-20 surface:absolute
-                      laptop:top-24 laptop:absolute
-                      desktop:top-30 desktop:absolute"
+            className="text-white text-sm absolute top-32 leading-5 text-center
+                      sm:top-40 sm:text-lg md:top-64 md:text-xl lg:text-2xl lg:top-72 xl:text-3xl xl:top-80 2xl:text-4xl 2xl:top-96"
           >
-            <p
-              className="text-4xl font-bold tracking-[0.36px] uppercase
-                        mobile:text-sm mobile:mt-28
-                        tablet:text-base tablet:mt-32
-                        surface:text-2xl surface:mt-40
-                        laptop:text-3xl laptop:mt-40
-                        desktop:text-4xl
-                        lg-desktop:text-4xl"
-            >
+            <p className="font-bold tracking-[0.36px] uppercase">
               Your Ultimate Spot for Fresh and <br />
               Tasty Chicken Treats
             </p>
             <button
-              className="bg-main-orange hover:bg-main-orange/80 text-white px-4 py-2 rounded-sm z-50 mt-10 text-sm
-                        mobile:my-2 mobile:px-2 mobile:py-1
-                        tablet:my-6 tablet:px-3 tablet:py-2
-                        surface:my-10 surface:px-4 surface:py-2
-                        laptop:my-14 laptop:px-5 laptop:py-3
-                        desktop:my-16 desktop:px-6 desktop:py-3
-                        lg-desktop:my-20 lg-desktop:px-6 lg-desktop:py-3"
+              className="bg-main-orange hover:bg-main-orange/80 text-white px-3 py-1 rounded-sm z-50 text-xs my-4
+                          sm:my-6 sm:px-3
+                          md:my-10
+                          lg:my-14 lg:px-4 lg:py-2 lg:text-sm
+                          xl:py-2
+                          2xl:my-16"
             >
               <p>Delivery Shop</p>
             </button>
-            {slider.map((slide) => (
-              <div
-                key={slide}
-                className="flex justify-center mt-14
-                          mobile:mt-0
-                          tablet:mt-0
-                          surface:mt-0
-                          laptop:mt-0
-                          desktop:mt-0
-                          lg-desktop:mt-0"
-              >
-                <div className="w-2 h-2 rounded-full border border-main-orange border-solid bg-main-orange "></div>
-                <div className="w-2 h-2 rounded-full border border-main-orange border-solid mx-1"></div>
-                <div className="w-2 h-2 rounded-full border border-main-orange border-solid "></div>
-              </div>
-            ))}
+            <Sliders />
           </div>
         </div>
 
-        {/* Supply meat */}
         <div
-          className="mt-32 mx-24 flex drop-shadow-2xl
-                    mobile:flex-col mobile:mt-20 mobile:mx-auto
-                    tablet:flex-col tablet:mt-20 tablet:mx-auto
-                    surface:flex-col surface:mt-20 surface:mx-auto"
+          className="mt-24 flex shadow-2xl flex-col relative
+                    sm:mt-20 sm:mx-auto
+                    lg:flex-row"
         >
-          <img
-            src={layer}
-            className="absolute right-0
-                      mobile:hidden
-                      tablet:hidden
-                      surface:hidden
-                      laptop:opacity-20"
-          />
+          <div>
+            <img src={layer} className="absolute right-0 hidden lg:block" />
+          </div>
           <img
             src={supplyMeatImg}
-            className="max-h-[508px] h-full object-cover
-                      mobile:max-h-[250px] mobile:h-full
-                      tablet:max-h-[300px] tablet:h-full
-                      surface:max-h-[400px] surface:h-full"
+            className=" object-cover w-full h-auto
+                        lg:w-1/2"
           />
-          <section
-            className="py-12 pl-28
-                      mobile:p-6
-                      tablet:p-8
-                      surface:p-10"
-          >
+          <section className="p-10 flex-1 lg:p-16 xl:p-20 2xl:p-28">
             <p
-              className="font-bold text-main-orange
-                          mobile:text-sm
-                          tablet:text-base
-                          surface:text-lg
-                          laptop:text-lg
-                          desktop:text-lg
-                          lg-desktop:text-lg"
+              className="font-bold text-main-orange text-sm md:text-base
+                        lg:text-lg"
             >
               About us
             </p>
             <h1
-              className="font-extrabold tracking-wide mb-2
-                        mobile:text-3xl
-                        tablet:text-3xl
-                        surface:text-3xl
-                        laptop:text-4xl
-                        desktop:text-4xl
-                        lg-desktop:text-4xl"
+              className="font-extrabold tracking-wide mb-2 text-2xl
+                        md:text-3xl
+                        lg:text-4xl
+                        2xl:mt-2 2xl:mb-8"
             >
               We Supply <br /> Quality{" "}
               <span className="text-main-orange">Meat</span>
             </h1>
             <p
-              className="font-medium text-gray-500 mb-8 mx-auto
-                          mobile:text-xs
-                          tablet:text-xs
-                          surface:text-sm
-                          laptop:text-sm
-                          desktop:text-base
-                          lg-desktop:text-base"
+              className="font-medium text-gray-500 mb-8 mx-auto text-xs
+                        md:text-base
+                        2xl:mb-8"
             >
               Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
               eiusmod tempor incididunt
             </p>
             <ul
               className={
-                "list-image-[url(iconcheck.png)] text-sm font-semibold"
+                "list-image-[url(icon-check.png)] text-xs font-semibold lg:text-sm "
               }
             >
               <li>Fully Natural Meat</li>
@@ -143,119 +90,109 @@ const Content = () => {
             </ul>
 
             <button
-              className="bg-main-orange hover:bg-main-orange/80 text-white rounded-sm mt-10 text-sm font-medium flex items-center
-                          mobile:px-2 mobile:py-2 mobile:text-xs
-                          tablet:px-2 tablet:py-2 tablet:text-sm
-                          surface:px-4 surface:py-2 surface:text-sm
-                          laptop:px-6 laptop:py-2 laptop:text-base
-                          desktop:px-6 desktop:py-2 desktop:text-base
-                          lg-desktop:px-6 lg-desktop:py-2 lg-desktop:text-base"
+              className="bg-main-orange hover:bg-main-orange/80 text-white rounded-sm mt-10 text-xs font-medium flex items-center px-3 py-1
+                        lg:text-sm lg:px-4 lg:py-2"
             >
               <p>Explore more</p>
               <IconExplore />
             </button>
-            <img
-              src={tom}
-              className="absolute bottom-0 right-0 w-[202px]
-                          mobile:hidden
-                          tablet:hidden
-                          surface:hidden
-                          laptop:hidden"
-            />
           </section>
+          <img
+            src={tom}
+            className="absolute right-0 bottom-0 w-[180px] hidden lg:block"
+          />
         </div>
 
-        <div className="flex flex-col items-center mb-20">
-          <p
-            className="text-3xl font-extrabold uppercase text-center  my-5
-                      mobile:text-xl mobile:mt-10 mobile:my-2
-                      tablet:text-xl tablet:mt-14 tablet:my-2
-                      surface:text-2xl surface:mt-14 surface:my-2
-                      laptop:text-2xl laptop:mt-16 laptop:my-2
-                      desktop:text-3xl desktop:mt-20 desktop:my-2
-                      lg-desktop:text-3xl lg-desktop:mt-20 lg-desktop:my-2"
-          >
+        <div className="flex flex-col items-center my-16">
+          <p className="text-xl font-extrabold uppercase text-center my-5 md:text-2xl lg:text-3xl">
             Your Premier Destination for Poultry Perfection <br />
             What do you <span className="text-main-orange">think?</span>
           </p>
-          <HorizontalLine />
+          <HorizontalLine width={"250px"} />
         </div>
       </div>
 
-      <div className="flex bg-gray-100 justify-center lg-desktop:justify-start">
+      <div className="flex bg-gray-100 ">
         <img
           src={productBg}
-          className="max-h-[508px] h-full aspect-[1/1] object-cover
-                    mobile:hidden
-                    tablet:hidden
-                    surface:hidden
-                    laptop:hidden
-                    desktop:hidden"
+          className="w-1/3 h-auto object-cover hidden lg:block"
         />
-        <div
-          className="mr-60
-                    mobile:mr-0
-                    tablet:mr-0
-                    surface:mr-0 "
-        >
-          <div className=" pt-5 flex items-center container mx-auto justify-center z-50 ">
-            <div
-              className="mr-28 border border-main-orange border-solid rounded-full p-1 hover:opacity-70 cursor-pointer x
-                        mobile:mr-4
-                        tablet:mr-4
-                        surface:mr-0"
-            >
+        <div className="w-full">
+          <div className="pt-5 px-2 gap-2 flex items-center justify-evenly 2xl:mt-14">
+            <div className=" border border-main-orange border-solid rounded-full p-1 hover:opacity-70 cursor-pointer ">
               <IconArrowLeft />
             </div>
 
-            <div className="tablet">
+            <div className="sm:hidden ">
               <ProductCards list={chickenProducts.slice(0, 1)} />
             </div>
-            <div className="mobile:hidden">
+
+            <div className="hidden sm:flex ">
               <ProductCards list={chickenProducts.slice(0, 2)} />
             </div>
-            <div
-              className="ml-28 border border-main-orange border-solid rounded-full p-1 hover:opacity-70 cursor-pointer
-                        mobile:ml-4
-                        tablet:ml-4
-                        surface:ml-0"
-            >
+            <div className="border border-main-orange border-solid rounded-full p-1 hover:opacity-70 cursor-pointer">
               <IconArrowRight />
             </div>
           </div>
-          {slider.map((slide) => (
-            <div
-              key={slide}
-              className="flex justify-center mt-2 items-center z-50
-                        mobile:pb-4
-                        tablet:pb-4
-                        surface:pb-4"
-            >
-              <div className="w-2 h-2 rounded-full border border-main-orange border-solid bg-main-orange "></div>
-              <div className="w-2 h-2 rounded-full border border-main-orange border-solid mx-1"></div>
-              <div className="w-2 h-2 rounded-full border border-main-orange border-solid "></div>
-            </div>
-          ))}
+          <div className="py-4">
+            <Sliders />
+          </div>
         </div>
       </div>
 
-      <div className="mt-32 flex items-center flex-col container mx-auto text-center">
-        <span className="text-xs py-1 text-white px-6 bg-main-orange rounded-[4px] font-semibold mb-3">
+      <div className="mt-28 flex items-center flex-col container mx-auto text-center px-4 ">
+        <span className="text-xs py-1 text-white px-6 bg-main-orange rounded-[4px] font-semibold mb-3 lg:text-sm">
           Products
         </span>
-        <h1 className="text-4xl font-extrabold mb-1">
+        <h1 className="text-3xl font-extrabold mb-1 lg:text-4xl">
           Featured frozen <span className="text-main-orange">meat</span>{" "}
         </h1>
-        <p className="text-sm text-gray-500 font-medium ">
+        <p className="text-xs text-gray-500 font-medium md:text-sm">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
           eiusmod tempor incididunt
         </p>
       </div>
 
-      <div className="container mx-auto mt-16 grid grid-cols-5 gap-x-7 gap-y-12 mobile:grid-cols-1 ">
-        <div className="flex justify-center flex-col items-center">
-          <ProductCards list={chickenProducts} />
+      <div className="my-28 container mx-auto flex gap-5 flex-col items-center md:grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
+        <ProductCards list={chickenProducts} />
+      </div>
+
+      {/* High-quality-meat */}
+      <section className="quality-background flex">
+        <img src="" className="hidden" />
+        <div className="p-8 sm:p-16 lg:flex ">
+          <div className="lg:flex-1 lg:px-10">
+            <span className="py-2 px-10 rounded-md bg-main-orange text-white text-xs md:text-sm">
+              Quality
+            </span>
+            <h1 className="uppercase text-2xl text-white font-extrabold mt-4 mb-6 lg:text-4xl">
+              HIGH-QUALITY FRESH <span className="bg-main-orange">MEAT</span>
+            </h1>
+            <p className="text-xs text-white w-2/1 md:text-sm lg:pr-8 xl:pr-48">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat.
+            </p>
+          </div>
+          <div className="lg:flex-1 lg:px-10">
+            {qualityFood.map((data) => {
+              return (
+                <QualityCard
+                  key={data.id}
+                  title={data.title}
+                  description={data.description}
+                  image={data.backgroundImage}
+                  type={data.type}
+                />
+              );
+            })}
+          </div>
         </div>
+      </section>
+
+      <div className="my-20">
+        <HorizontalLine width={"340px"} />
       </div>
     </div>
   );
