@@ -26,3 +26,14 @@ export const qualityFood =[
     type: "black"
   },
 ]
+
+export const qualityList = [
+  {
+    id: 1,
+    title: "Fully Natural Meat",
+  },
+   {
+    id: 2,
+    title: "Secured Payments",
+  },
+]

@@ -22,7 +22,7 @@ const ProductCards = ({ list }) => {
             className="w-full h-[150px] object-cover rounded"
           />
         </div>
-        <div className="mt-3 px-4">
+        <div className="mt-3 px-6">
           <p className="text-main-orange font-bold text-md">
             {product.starRate} Stars
           </p>
@@ -33,10 +33,10 @@ const ProductCards = ({ list }) => {
           </p>
         </div>
         <div className="flex justify-between items-center">
-          <button className="bg-main-orange hover:bg-main-orange/80 py-2 px-4 rounded-xl text-white text-xs ml-4">
+          <button className="bg-main-orange hover:bg-main-orange/80 py-2 px-4 rounded-xl text-white text-xs ml-6">
             Add to Cart
           </button>
-          <IconMarker />
+          <IconMarker className="mr-8" />
         </div>
       </div>
     );
