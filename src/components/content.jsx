@@ -9,12 +9,13 @@ import productBg from "../assets/images/bg-product.png";
 import { chickenProducts } from "../utils/food-data";
 import Sliders from "./sliders";
 import QualityCard from "./quality-card";
-import { qualityFood } from "../utils/quality-data";
+import { qualityFood, qualityList } from "../utils/quality-data";
+import iconCheck from "../assets/images/icon-check.png";
 
 const Content = () => {
   return (
     <div>
-      <div className="container mx-auto mt-12">
+      <div className="container mx-auto mt-20">
         <img
           src={introBackground}
           className="w-full h-auto object-cover rounded-lg aspect-[3/1] brightness-[0.4]"
@@ -22,8 +23,8 @@ const Content = () => {
 
         <div className="flex justify-center">
           <div
-            className="text-white text-sm absolute top-32 leading-5 text-center
-                      sm:top-40 sm:text-lg md:top-64 md:text-xl lg:text-2xl lg:top-72 xl:text-3xl xl:top-80 2xl:text-4xl 2xl:top-96"
+            className="text-white text-sm absolute top-44 leading-5 text-center
+                      sm:top-48 sm:text-lg md:top-64 md:text-xl lg:text-2xl lg:top-72 xl:text-3xl xl:top-80 2xl:text-4xl 2xl:top-96"
           >
             <p className="font-bold tracking-[0.36px] uppercase">
               Your Ultimate Spot for Fresh and <br />
@@ -80,14 +81,17 @@ const Content = () => {
               Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
               eiusmod tempor incididunt
             </p>
-            <ul
-              className={
-                "list-image-[url(icon-check.png)] text-xs font-semibold lg:text-sm "
-              }
-            >
-              <li>Fully Natural Meat</li>
-              <li>Secured Payments</li>
-            </ul>
+
+            {qualityList.map((list) => (
+              <div key={list} className="flex items-center mb-4">
+                <div className="p-1 mr-2 border border-solid border-main-orange rounded-full">
+                  <img src={iconCheck} className="w-3 h-3" />
+                </div>
+                <p className="text-xs font-semibold lg:text-sm ">
+                  {list.title}
+                </p>
+              </div>
+            ))}
 
             <button
               className="bg-main-orange hover:bg-main-orange/80 text-white rounded-sm mt-10 text-xs font-medium flex items-center px-3 py-1
@@ -115,19 +119,19 @@ const Content = () => {
       <div className="flex bg-gray-100 ">
         <img
           src={productBg}
-          className="w-1/3 h-auto object-cover hidden lg:block"
+          className="w-full h-[625px] object-cover hidden xl:block "
         />
-        <div className="w-full">
-          <div className="pt-5 px-2 gap-2 flex items-center justify-evenly 2xl:mt-14">
+        <div>
+          <div className="pt-5 gap-8 m-8 flex items-center justify-evenly xl:mt-16 ">
             <div className=" border border-main-orange border-solid rounded-full p-1 hover:opacity-70 cursor-pointer ">
               <IconArrowLeft />
             </div>
 
-            <div className="sm:hidden ">
+            <div className="sm:hidden">
               <ProductCards list={chickenProducts.slice(0, 1)} />
             </div>
 
-            <div className="hidden sm:flex ">
+            <div className="hidden sm:flex gap-8 ">
               <ProductCards list={chickenProducts.slice(0, 2)} />
             </div>
             <div className="border border-main-orange border-solid rounded-full p-1 hover:opacity-70 cursor-pointer">
@@ -140,59 +144,62 @@ const Content = () => {
         </div>
       </div>
 
-      <div className="mt-28 flex items-center flex-col container mx-auto text-center px-4 ">
-        <span className="text-xs py-1 text-white px-6 bg-main-orange rounded-[4px] font-semibold mb-3 lg:text-sm">
-          Products
-        </span>
-        <h1 className="text-3xl font-extrabold mb-1 lg:text-4xl">
-          Featured frozen <span className="text-main-orange">meat</span>{" "}
-        </h1>
-        <p className="text-xs text-gray-500 font-medium md:text-sm">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-          eiusmod tempor incididunt
-        </p>
-      </div>
-
-      <div className="my-28 container mx-auto flex gap-5 flex-col items-center md:grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
-        <ProductCards list={chickenProducts} />
-      </div>
-
-      {/* High-quality-meat */}
-      <section className="quality-background flex">
-        <img src="" className="hidden" />
-        <div className="p-8 sm:p-16 lg:flex ">
-          <div className="lg:flex-1 lg:px-10">
-            <span className="py-2 px-10 rounded-md bg-main-orange text-white text-xs md:text-sm">
-              Quality
-            </span>
-            <h1 className="uppercase text-2xl text-white font-extrabold mt-4 mb-6 lg:text-4xl">
-              HIGH-QUALITY FRESH <span className="bg-main-orange">MEAT</span>
-            </h1>
-            <p className="text-xs text-white w-2/1 md:text-sm lg:pr-8 xl:pr-48">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.
-            </p>
-          </div>
-          <div className="lg:flex-1 lg:px-10">
-            {qualityFood.map((data) => {
-              return (
-                <QualityCard
-                  key={data.id}
-                  title={data.title}
-                  description={data.description}
-                  image={data.backgroundImage}
-                  type={data.type}
-                />
-              );
-            })}
-          </div>
+      <div className="food-card-background">
+        <div className=" pt-28 flex items-center flex-col container mx-auto text-center px-4 ">
+          <span className="text-xs py-1 text-white px-6 bg-main-orange rounded-[4px] font-semibold mb-3 lg:text-sm">
+            Products
+          </span>
+          <h1 className="text-3xl font-extrabold mb-1 lg:text-4xl">
+            Featured frozen <span className="text-main-orange">meat</span>{" "}
+          </h1>
+          <p className="text-xs text-gray-500 font-medium md:text-sm">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+            eiusmod tempor incididunt
+          </p>
         </div>
-      </section>
 
-      <div className="my-20">
-        <HorizontalLine width={"340px"} />
+        <div className="my-28 container mx-auto flex gap-5 flex-col items-center sm:grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
+          <ProductCards list={chickenProducts} />
+        </div>
+
+        {/* High-quality-meat */}
+        <section className="quality-background flex w-full h-auto">
+          <img src="" className="hidden" />
+          <div className="m-8 lg:flex  ">
+            <div className="lg:flex-1 lg:px-10 lg:py-9">
+              <span className="py-2 px-10 rounded-md bg-main-orange text-white text-xs md:text-sm">
+                Quality
+              </span>
+              <h1 className="uppercase text-2xl text-white font-extrabold mt-4 mb-6 lg:text-4xl">
+                HIGH-QUALITY FRESH{" "}
+                <span className="text-main-orange">MEAT</span>
+              </h1>
+              <p className="text-xs text-white w-2/1 md:text-sm lg:pr-8 ">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat.
+              </p>
+            </div>
+            <div className="lg:flex-1 lg:px-10 2xl:px-52">
+              {qualityFood.map((data) => {
+                return (
+                  <QualityCard
+                    key={data.id}
+                    title={data.title}
+                    description={data.description}
+                    image={data.backgroundImage}
+                    type={data.type}
+                  />
+                );
+              })}
+            </div>
+          </div>
+        </section>
+
+        <div className="py-20">
+          <HorizontalLine width={"200px"} />
+        </div>
       </div>
     </div>
   );

@@ -10,6 +10,11 @@ export default {
         "main-orange":"#EE7214"
       },
 
+      listStyleImage: {
+        checkMark: 'url("./src/assets/images/icon-check.png") ',
+
+      },
+
       brightness: {
         30: '0.3',
         20: '0.2'
