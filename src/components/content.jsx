@@ -1,47 +1,28 @@
 import introBackground from "../assets/images/intro-background.png";
+import introBackground2 from "../assets/images/chicken-bg.png";
+import introBackground3 from "../assets/images/shop-bg.png";
 import supplyMeatImg from "../assets/images/supply-meat.png";
-import { IconArrowLeft, IconArrowRight, IconExplore } from "./icons";
+import { IconExplore } from "./icons";
 import layer from "../assets/images/layer.png";
 import tom from "../assets/images/tom.png";
 import { HorizontalLine } from "./line";
 import ProductCards from "./product-card";
 import productBg from "../assets/images/bg-product.png";
 import { chickenProducts } from "../utils/food-data";
-import Sliders from "./sliders";
 import QualityCard from "./quality-card";
 import { qualityFood, qualityList } from "../utils/quality-data";
 import iconCheck from "../assets/images/icon-check.png";
+import SliderCustom from "./slider-custom";
+import ProductSliderCustom from "./product-slider-custom";
 
 const Content = () => {
+  const images = [introBackground, introBackground2, introBackground3];
+
   return (
     <div>
       <div className="container mx-auto mt-20">
-        <img
-          src={introBackground}
-          className="w-full h-auto object-cover rounded-lg aspect-[3/1] brightness-[0.4]"
-        />
-
         <div className="flex justify-center">
-          <div
-            className="text-white text-sm absolute top-44 leading-5 text-center
-                      sm:top-48 sm:text-lg md:top-64 md:text-xl lg:text-2xl lg:top-72 xl:text-3xl xl:top-80 2xl:text-4xl 2xl:top-96"
-          >
-            <p className="font-bold tracking-[0.36px] uppercase">
-              Your Ultimate Spot for Fresh and <br />
-              Tasty Chicken Treats
-            </p>
-            <button
-              className="bg-main-orange hover:bg-main-orange/80 text-white px-3 py-1 rounded-sm z-50 text-xs my-4
-                          sm:my-6 sm:px-3
-                          md:my-10
-                          lg:my-14 lg:px-4 lg:py-2 lg:text-sm
-                          xl:py-2
-                          2xl:my-16"
-            >
-              <p>Delivery Shop</p>
-            </button>
-            <Sliders />
-          </div>
+          <SliderCustom images={images} />
         </div>
 
         <div
@@ -119,29 +100,9 @@ const Content = () => {
       <div className="flex bg-gray-100 ">
         <img
           src={productBg}
-          className="w-full h-[625px] object-cover hidden xl:block "
+          className="w-1/2 h-[625px] object-cover hidden xl:block "
         />
-        <div>
-          <div className="pt-5 gap-8 m-8 flex items-center justify-evenly xl:mt-16 ">
-            <div className=" border border-main-orange border-solid rounded-full p-1 hover:opacity-70 cursor-pointer ">
-              <IconArrowLeft />
-            </div>
-
-            <div className="sm:hidden">
-              <ProductCards list={chickenProducts.slice(0, 1)} />
-            </div>
-
-            <div className="hidden sm:flex gap-8 ">
-              <ProductCards list={chickenProducts.slice(0, 2)} />
-            </div>
-            <div className="border border-main-orange border-solid rounded-full p-1 hover:opacity-70 cursor-pointer">
-              <IconArrowRight />
-            </div>
-          </div>
-          <div className="py-4">
-            <Sliders />
-          </div>
-        </div>
+        <ProductSliderCustom />
       </div>
 
       <div className="food-card-background">
@@ -164,8 +125,7 @@ const Content = () => {
 
         {/* High-quality-meat */}
         <section className="quality-background flex w-full h-auto">
-          <img src="" className="hidden" />
-          <div className="m-8 lg:flex  ">
+          <div className="m-8 lg:flex ">
             <div className="lg:flex-1 lg:px-10 lg:py-9">
               <span className="py-2 px-10 rounded-md bg-main-orange text-white text-xs md:text-sm">
                 Quality
