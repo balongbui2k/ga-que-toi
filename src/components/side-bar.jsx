@@ -1,15 +1,21 @@
+import { Link } from "react-router-dom";
+
 const SideBar = ({ isOpen }) => {
   return (
     isOpen && (
       <div className=" absolute text-center z-10 top-[64px] left-0 w-full bg-white border-b border-gray-300 cursor-pointer">
         <div className="p-2 ">
-          <p className=" hover:text-main-orange ">Home</p>
+          <Link to={"/"} className=" hover:text-main-orange ">
+            Home
+          </Link>
         </div>
         <div className="p-2 border-t border-gray-300 ">
           <p className=" hover:text-main-orange ">Shop</p>
         </div>
         <div className="p-2 border-t border-gray-300  hover:text-main-orange ">
-          <p className=" hover:text-main-orange">Contact</p>
+          <Link to={"/contact-page"} className=" hover:text-main-orange">
+            Contact
+          </Link>
         </div>
         <div className="p-2 border-t border-gray-300  hover:text-main-orange ">
           <p className=" hover:text-main-orange">Favorites</p>

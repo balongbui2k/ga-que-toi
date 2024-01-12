@@ -1,8 +1,8 @@
 import { VerticalLine } from "./line";
 import iconFooter from "../assets/images/main-icon-footer.png";
 import iconFacebook from "../assets/images/facebook-icon.png";
-import iconTwitter from "../assets/images/twitter-icon.png";
 import iconGoogle from "../assets/images/google-plus-icon.png";
+import iconTwitter from "../assets/images/twitter-icon.png";
 import iconInstagram from "../assets/images/instagram-icon.png";
 
 const Footer = () => {
