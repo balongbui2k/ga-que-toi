@@ -2,6 +2,7 @@ import mainIcon from "../assets/images/main-logo.png";
 import englandIcon from "../assets/images/england-icon.png";
 import { IconCart, IconMarker, IconMenu } from "../components/icons";
 import { VerticalLine } from "../components/line";
+import { Link } from "react-router-dom";
 
 const Header = ({ onButtonClick }) => {
   return (
@@ -13,9 +14,14 @@ const Header = ({ onButtonClick }) => {
             <p className="px-14 ">+84 916931268</p>
             <p>Thanh Xuan, Hanoi, Vietnam</p>
           </div>
-          <div className="flex justify-end ">
+          <div className="flex justify-end items-center">
             <p className="hover:opacity-80 cursor-pointer">English</p>
-            <p className="pl-4 cursor-pointer hover:opacity-80">Sign in</p>
+            <Link
+              to={`/login-page`}
+              className="pl-4 cursor-pointer hover:opacity-80 font-bold text-sm"
+            >
+              Log in
+            </Link>
           </div>
         </div>
       </div>
@@ -25,14 +31,21 @@ const Header = ({ onButtonClick }) => {
           src={mainIcon}
           width={140}
           height={40}
-          className="py-4 ml-20 cursor-pointer  "
+          className="py-4 ml-20 cursor-pointer"
         />
         <div className="flex items-center container mx-auto justify-end px-6">
-          <p className="cursor-pointer hover:text-main-orange">Home</p>
+          <Link to={`/`} className="cursor-pointer hover:text-main-orange">
+            Home
+          </Link>
           <VerticalLine />
-          <p className="cursor-pointer  hover:text-main-orange">Shop</p>
+          <p className="cursor-pointer hover:text-main-orange">Shop</p>
           <VerticalLine />
-          <p className="cursor-pointer  hover:text-main-orange">Contact</p>
+          <Link
+            to={`/contact-page`}
+            className="cursor-pointer hover:text-main-orange"
+          >
+            Contact
+          </Link>
           <VerticalLine />
           <IconMarker className="mr-4 cursor-pointer hover:opacity-85" />
           <IconCart className="cursor-pointer hover:opacity-85" />
@@ -52,9 +65,12 @@ const Header = ({ onButtonClick }) => {
               src={englandIcon}
               className="w-[20px] h-[20px] hover:opacity-80 sm:cursor-pointer"
             />
-            <p className="pl-4 hover:text-main-orange cursor-pointer">
-              Sign in
-            </p>
+            <Link
+              className="pl-4 hover:text-main-orange cursor-pointer"
+              to={`/login-page`}
+            >
+              Log in
+            </Link>
           </div>
           <div className="mr-4 hover:opacity-80 hover:scale-105 duration-200 rounded-full cursor-pointer flex">
             <IconMenu onClick={onButtonClick} />
