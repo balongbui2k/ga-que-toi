@@ -23,14 +23,14 @@ const SliderCustom = ({ images }) => {
   };
 
   return (
-    <>
+    <div className="flex relative justify-center items-center">
       <img
         src={images[currentImageIndex]}
         className="w-full h-auto object-cover rounded-lg aspect-[3/1] brightness-[0.4] "
       />
       <div
-        className="text-white text-xs absolute top-[148px] leading-5 text-center
-              sm:top-48 sm:text-lg md:top-64 md:text-xl lg:text-2xl lg:top-72 xl:text-3xl xl:top-80 2xl:text-4xl 2xl:top-96"
+        className="text-white text-xs absolute leading-5 text-center
+                  sm:text-lg md:text-xl lg:text-2xl xl:text-3xl  2xl:text-4xl "
       >
         <p className="font-bold tracking-[0.36px] uppercase">
           Your Ultimate Spot for Fresh and <br />
@@ -49,7 +49,7 @@ const SliderCustom = ({ images }) => {
 
         <div className="flex justify-center">{renderDots()}</div>
       </div>
-    </>
+    </div>
   );
 };
 

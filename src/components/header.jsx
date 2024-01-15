@@ -38,7 +38,12 @@ const Header = ({ onButtonClick }) => {
             Home
           </Link>
           <VerticalLine />
-          <p className="cursor-pointer hover:text-main-orange">Shop</p>
+          <Link
+            to={`/shop-page`}
+            className="cursor-pointer hover:text-main-orange"
+          >
+            Shop
+          </Link>
           <VerticalLine />
           <Link
             to={`/contact-page`}
@@ -47,8 +52,11 @@ const Header = ({ onButtonClick }) => {
             Contact
           </Link>
           <VerticalLine />
+
           <IconMarker className="mr-4 cursor-pointer hover:opacity-85" />
-          <IconCart className="cursor-pointer hover:opacity-85" />
+          <Link to={`/cart-page`}>
+            <IconCart className="cursor-pointer hover:opacity-85" />
+          </Link>
         </div>
       </div>
 
