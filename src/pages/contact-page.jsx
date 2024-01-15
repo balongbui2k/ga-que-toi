@@ -51,10 +51,14 @@ const ContactPage = () => {
           </p>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-          <CustomTextInput title={"First name"} widthFull />
-          <CustomTextInput title={"Last Name"} widthFull />
+          <CustomTextInput
+            title={"First name"}
+            id="firstName"
+            name="firstName"
+          />
+          <CustomTextInput title={"Last Name"} id="lastName" name="lastName" />
         </div>
-        <CustomTextInput title={"Your E-mail"} widthFull />
+        <CustomTextInput title={"Your E-mail"} id="email" name="email" />
         <div className="border border-solid border-main-orange p-2 rounded">
           <div className="text-sm text-gray-500 mb-3">Your Message</div>
           <textarea
