@@ -4,6 +4,7 @@ import iconFacebook from "../assets/images/facebook-icon.png";
 import iconGoogle from "../assets/images/google-plus-icon.png";
 import iconTwitter from "../assets/images/twitter-icon.png";
 import iconInstagram from "../assets/images/instagram-icon.png";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -31,9 +32,16 @@ const Footer = () => {
         </div>
         <div className="pb-4 md:pb-8 lg:pb-16">
           <div className="flex items-center container mx-auto justify-end px-6 text-white">
-            <p className="cursor-pointer hover:opacity-85">Home</p>
+            <Link to={`/`} className="cursor-pointer hover:opacity-85">
+              Home
+            </Link>
             <VerticalLine color={"white"} />
-            <p className="cursor-pointer hover:opacity-85">Shop</p>
+            <Link
+              to={`/shop-page`}
+              className="cursor-pointer hover:text-main-orange"
+            >
+              Shop
+            </Link>
             <VerticalLine color={"white"} />
             <p className="cursor-pointer hover:opacity-85">Contact</p>
             <VerticalLine color={"white"} />

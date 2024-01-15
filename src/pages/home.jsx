@@ -6,17 +6,18 @@ import { IconExplore } from "../components/icons";
 import layer from "../assets/images/layer.png";
 import tom from "../assets/images/tom.png";
 import { HorizontalLine } from "../components/line";
-import ProductCards from "../components/product-card";
 import productBg from "../assets/images/bg-product.png";
-import { chickenProducts } from "../utils/food-data";
 import QualityCard from "../components/quality-card";
 import { qualityFood, qualityList } from "../utils/quality-data";
 import iconCheck from "../assets/images/icon-check.png";
 import SliderCustom from "../components/slider-custom";
 import ProductSliderCustom from "../components/product-slider-custom";
+import ProductList from "../components/product-list";
 
 const Home = () => {
   const images = [introBackground, introBackground2, introBackground3];
+  const categoryDescription =
+    "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt";
 
   return (
     <div>
@@ -106,24 +107,12 @@ const Home = () => {
       </div>
 
       <div className="food-card-background">
-        <div className=" pt-28 flex items-center flex-col container mx-auto text-center px-4 ">
-          <span className="text-xs py-1 text-white px-6 bg-main-orange rounded-[4px] font-semibold mb-3 lg:text-sm">
-            Products
-          </span>
-          <h1 className="text-3xl font-extrabold mb-1 lg:text-4xl">
-            Featured frozen <span className="text-main-orange">meat</span>{" "}
-          </h1>
-          <p className="text-xs text-gray-500 font-medium md:text-sm">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-            eiusmod tempor incididunt
-          </p>
-        </div>
+        <ProductList
+          categoryName={"Product"}
+          title={"Featured frozen meat"}
+          description={categoryDescription}
+        />
 
-        <div className="my-28 container mx-auto flex gap-5 flex-col items-center sm:grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
-          <ProductCards list={chickenProducts} />
-        </div>
-
-        {/* High-quality-meat */}
         <section className="quality-background flex w-full h-auto">
           <div className="m-8 lg:flex ">
             <div className="lg:flex-1 lg:px-10 lg:py-9">
