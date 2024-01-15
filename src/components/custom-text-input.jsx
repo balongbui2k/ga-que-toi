@@ -1,10 +1,8 @@
-const CustomTextInput = ({ title, placeholder, widthFull }) => {
+const CustomTextInput = ({ title, placeholder }) => {
   return (
     <div className="relative">
       <input
-        className={`border rounded px-2 py-1 border-solid border-main-orange ${
-          widthFull ? "w-full" : "w-1/2"
-        }`}
+        className="border rounded px-2 py-1 border-solid border-main-orange w-full "
         type="text"
         placeholder={placeholder}
       />

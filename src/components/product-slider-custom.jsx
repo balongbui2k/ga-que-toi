@@ -21,7 +21,7 @@ const ProductSliderCustom = () => {
     return Array.from({ length: totalProducts / 2 }, (x, i) => (
       <div
         key={i}
-        className={`w-2 h-2 rounded-full border border-main-orange border-solid mx-1 ${
+        className={`w-2 h-2 rounded-full border border-main-orange border-solid mx-1 transition-all duration-500 ease-in-out  ${
           i === currentProduct / 2 ? "bg-main-orange" : ""
         }`}
       ></div>

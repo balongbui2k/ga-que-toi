@@ -19,8 +19,8 @@ const Home = () => {
   const images = [introBackground, introBackground2, introBackground3];
 
   return (
-    <div>
-      <div className="container mx-auto mt-20">
+    <div className="my-20">
+      <div className="container mx-auto my-16">
         <div className="flex justify-center">
           <SliderCustom images={images} />
         </div>
